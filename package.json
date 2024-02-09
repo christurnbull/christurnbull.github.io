@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-gh": "ng build --configuration production --base-href https://christurnbull.github.io/",
+    "build-ghX": "ng build --configuration production --base-href https://christurnbull.github.io/",
+    "build-gh": "ng build && mkdir -p docs/ && mv dist/christurnbull.github.io/browser/* docs/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev": "npm run start"

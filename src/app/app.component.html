@@ -230,6 +230,10 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+
+      <button type="button" (click)="fileInput.click()">Shard File</button>
+      <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
