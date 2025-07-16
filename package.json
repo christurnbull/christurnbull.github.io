@@ -4,38 +4,45 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build-ghX": "ng build --configuration production --base-href https://christurnbull.github.io/",
-    "build-gh": "ng build && mkdir -p docs/ && mv dist/christurnbull.github.io/browser/* docs/",
+    "build": "ng build --configuration production --stats-json && echo 'https://esbuild.github.io/analyze/'",
+    "build-gh": "ng build --configuration production && rm -rf docs/ && mkdir -p docs/ && mv dist/christurnbull.github.io/browser/* docs/ && npm run cname",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev": "npm run start"
+    "dev": "npm run start",
+    "gc": "npx ng g component --skip-tests --prefix ''",
+    "cname": "echo 'wow-l.uk' > docs/CNAME"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^17.1.0",
-    "@angular/common": "^17.1.0",
-    "@angular/compiler": "^17.1.0",
-    "@angular/core": "^17.1.0",
-    "@angular/forms": "^17.1.0",
-    "@angular/platform-browser": "^17.1.0",
-    "@angular/platform-browser-dynamic": "^17.1.0",
-    "@angular/router": "^17.1.0",
-    "rxjs": "~7.8.0",
+    "@angular/cdk": "^20.1.0",
+    "@angular/common": "^20.1.0",
+    "@angular/compiler": "^20.1.0",
+    "@angular/core": "^20.1.0",
+    "@angular/forms": "^20.1.0",
+    "@angular/platform-browser": "^20.1.0",
+    "@angular/platform-browser-dynamic": "^20.1.0",
+    "@angular/router": "^20.1.0",
+    "npm-check-updates": "^18.0.1",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.3"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.1.2",
-    "@angular/cli": "^17.1.2",
-    "@angular/compiler-cli": "^17.1.0",
+    "@angular/build": "^20.1.0",
+    "@angular/cli": "^20.1.0",
+    "@angular/compiler-cli": "^20.1.0",
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/jasmine": "~5.1.0",
+    "@types/jspdf": "^2.0.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.3.2"
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "~5.8.3"
   }
 }

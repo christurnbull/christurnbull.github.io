@@ -1,13 +1,59 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>ChristurnbullGithubIo</title>
+  <title>Wow Look...</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    .pre-loader {
+      width: fit-content;
+      font-weight: bold;
+      font-family: sans-serif;
+      font-size: 30px;
+      padding-bottom: 8px;
+      background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+      animation: l2 2s linear infinite;
+      margin: 30vh auto;
+    }
+
+    .pre-loader:before {
+      content: "Loading..."
+    }
+
+    @keyframes l2 {
+      to {
+        background-size: 100% 3px
+      }
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script id="gtm-script" data-id="GTM-MS67VTFS" type="text/javascript">(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MS67VTFS');</script>
+  <!-- End Google Tag Manager -->
 </head>
-<body>
-  <app-root></app-root>
+
+<body class="font-noto">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS67VTFS" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <app-root>
+    <div class="pre-loader"></div>
+  </app-root>
+
 </body>
+
 </html>
