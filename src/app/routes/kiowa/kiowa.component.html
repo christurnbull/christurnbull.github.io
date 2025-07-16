@@ -1,0 +1,206 @@
+<main id="main-content" #mainContent>
+
+    <article
+        class="prose dark:prose-invert mx-auto max-w-5xl p-4 selection:bg-black selection:text-white mt-16 mb-24 space-y-16">
+
+        <div class="mb-4">
+            <h1 class="mb-1">{{resolved.title}}</h1>
+            <em>Advanced Web Server Security & Log Analysis Tool</em>
+        </div>
+
+        <section>
+            <tw-tags [tags]="resolved.tags"></tw-tags>
+        </section>
+
+        <section>
+
+            <img src="assets/kiowa-logo.png" alt="kiowa Logo" class="w-12 max-w-xs float-left mr-4 mt-3 mb-0">
+            <p>
+                kiowa is a robust, TypeScript-based command-line utility designed for system administrators and DevOps
+                professionals who need advanced log analysis and automated security enforcement for web servers. Built
+                specifically for Linux environments, kiowa integrates with iptables to provide real-time monitoring,
+                malicious activity detection, and automated IP blocking for enhanced server protection. It is a useful
+                ally for Apache HTTP Server.
+            </p>
+
+        </section>
+
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card-gray">
+                    <h4>Log Monitoring & Analysis</h4>
+                    <ul>
+                        <li><strong>Real-time Log Tailing</strong>: Monitor multiple virtual host logs simultaneously
+                            with domain filtering</li>
+                        <li><strong>Historical Log Analysis</strong>: Retrieve and analyse log entries within specified
+                            time frames (minutes or days)</li>
+                        <li><strong>Smart Log Parsing</strong>: Convert Common Log Format (CLF) entries into structured
+                            data with enhanced metadata</li>
+                        <li><strong>Geolocation Integration</strong>: Automatically resolve IP addresses to country
+                            codes and names for geographical insights</li>
+                        <li><strong>Bot Detection</strong>: Identify and categorize crawler and bot traffic using
+                            advanced user agent analysis</li>
+                    </ul>
+                </div>
+                <div class="card-gray text-center">
+                    <img src="assets/kiowa-cmd.png" alt="kiowa Command Line Tool"
+                        class="rounded-lg w-full mb-4 border-8 border-black" imgDialog>
+                    <em>Command line tool</em>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="card-gray">
+                    <h4>Security Automation</h4>
+                    <ul>
+                        <li><strong>Malicious Request Detection</strong>: Pattern-based identification of suspicious or
+                            malicious requests</li>
+                        <li><strong>Automatic IP Blocking</strong>: Configure thresholds to automatically block IPs
+                            making repeated suspicious requests</li>
+                        <li><strong>Country-based Filtering</strong>: Whitelist or blacklist traffic based on country of
+                            origin</li>
+                        <li><strong>Attack Pattern Rules</strong>: Configurable rule system to identify common attack
+                            vectors (e.g., WordPress login attempts)</li>
+                        <li><strong>Firewall Management</strong>: Command-line interface for managing iptables firewall
+                            rules</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li><strong>Managed Service Providers:</strong> Monitor multiple client websites hosted on a
+                            single server</li>
+                        <li><strong>Security Operations:</strong> Quickly identify and respond to suspicious activity
+                            across domains</li>
+                        <li><strong>DevOps Automation:</strong> Integrate with monitoring systems to automate security
+                            responses</li>
+                        <li><strong>Server Hardening:</strong> Implement protective measures against common web attacks
+                        </li>
+                        <li><strong>Traffic Analysis:</strong> Gain insights into traffic patterns, bot activity, and
+                            potential security issues</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+            <p>kiowa is built using modern TypeScript with a focus on modularity and extensibility. The system
+                architecture consists of several key components.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="card-gray">
+                    <h4>Command Line Interface</h4>
+                    <p>The application uses Commander.js to provide an intuitive CLI with multiple commands and
+                        subcommands:</p>
+                    <ul>
+                        <li><code>tail</code> / <code>t</code>: Real-time monitoring of log files</li>
+                        <li><code>cat</code> / <code>c</code>: View historical log entries</li>
+                        <li><code>firewall</code> / <code>f</code>: Manage iptables firewall rules</li>
+                        <li><code>block</code> / <code>unblock</code>: Control IP address blocking</li>
+                        <li><code>malicious</code>: Auto-detect and block suspicious activity</li>
+                        <li><code>purge</code> / <code>export</code>: Manage firewall rule sets</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Log Processing Engine</h4>
+                    <p>Components that transform raw log data into actionable intelligence:</p>
+                    <ul>
+                        <li><strong>Parser System:</strong> Converts Common Log Format entries into structured kiowa
+                            format</li>
+                        <li><strong>Enrichment Pipeline:</strong> Adds geolocation data, bot detection, and user agent
+                            parsing</li>
+                        <li><strong>Presentation Layer:</strong> Formats log entries for human-readable output with
+                            customizable truncation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="card-gray">
+                    <h4>Security Enforcement</h4>
+                    <p>kiowa's security system includes:</p>
+                    <ul>
+                        <li><strong>Rule Engine:</strong> Configurable rules for identifying suspicious behaviour
+                            patterns</li>
+                        <li><strong>Threshold System:</strong> Configurable attempt counts and time windows for
+                            triggering blocks</li>
+                        <li><strong>Firewall Integration:</strong> Direct management of iptables rules with specialized
+                            comment format for tracking</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Technologies Used</h4>
+                    <ul>
+                        <li><strong>TypeScript & Node.js:</strong> Core language and runtime</li>
+                        <li><strong>Commander.js:</strong> CLI framework for command structure</li>
+                        <li><strong>clf-parser & geoip-lite:</strong> Log parsing and geolocation</li>
+                        <li><strong>isbot & ua-parser-js:</strong> Bot detection and user agent analysis</li>
+                        <li><strong>iptables:</strong> Linux kernel firewall integration</li>
+                        <li><strong>tsx & pkg:</strong> TypeScript execution and binary packaging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Security-Conscious Design</h2>
+            <p>
+                kiowa employs several security-focused design patterns that make it particularly valuable for production
+                environments.
+            </p>
+
+            <div class="card-gray">
+                <h4>Non-Intrusive Monitoring</h4>
+                <p>kiowa reads log files without modifying them, ensuring the integrity of server logs while
+                    providing real-time analysis.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <div class="card-gray md:col-span-2">
+                    <h4>Audit-Friendly Rule Management</h4>
+                    <p>All firewall rules created by kiowa include specially formatted comments that contain:</p>
+                    <ul>
+                        <li>Timestamp of rule creation</li>
+                        <li>Whether the rule was manually or automatically created</li>
+                        <li>Country code of the blocked IP (when available)</li>
+                        <li>Reference to the specific detection rule that triggered the block</li>
+                    </ul>
+                    <p>This metadata enables precise auditing of security events and justification for all blocking
+                        actions.</p>
+                </div>
+                <div class="card-gray">
+                    <h4>Geographic Intelligence</h4>
+                    <p>The country-based whitelist system enables organizations to implement geographic security
+                        policies while maintaining access for legitimate users from specific regions.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="card-gray">
+                    <h4>Graceful Privilege Handling</h4>
+                    <p>While kiowa requires sudo privileges for firewall manipulation, it minimizes the attack surface
+                        by:</p>
+                    <ul>
+                        <li>Using targeted command execution only for specific firewall operations</li>
+                        <li>Implementing careful input sanitization before constructing privileged commands</li>
+                    </ul>
+                </div>
+                <div class="card-gray">
+                    <h4>Persistent & Portable Firewall Rules</h4>
+                    <p>kiowa allows exporting and importing rules in a format compatible with iptables, enabling:</p>
+                    <ul>
+                        <li>Backup of security configurations</li>
+                        <li>Transfer of rules between systems</li>
+                        <li>Restoration of rules after server reboots</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </article>
+
+</main>

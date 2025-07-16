@@ -1,0 +1,212 @@
+<main id="main-content" #mainContent>
+
+    <article
+        class="prose dark:prose-invert mx-auto max-w-5xl p-4 selection:bg-black selection:text-white mt-16 mb-24 space-y-16">
+
+        <h1>{{resolved.title}}</h1>
+
+        <section>
+            <tw-tags [tags]="resolved.tags"></tw-tags>
+        </section>
+
+        <!-- <p>gradient descent ts, vptree-ts, tagbox, redis, Mongo, webRTC, websockets</p> -->
+
+        <section id="ndta">
+            <h2>Node.js Data Transfer Agent</h2>
+
+            <h3>Course and Job Vacancy Data</h3>
+            <p>A backend service application built using the LoopBack 4 framework. It is designed to manage educational
+                courses and job vacancy data for Gateshead Council Learning and Skills department. It serves as an
+                integration layer between different external systems and a custom <a routerLink="/ls-cms">CMS
+                    application</a>:
+            </p>
+            <ul>
+                <li><a href="https://www.tribalgroup.com/solutions/student-information-systems/ebs"
+                        target="_blank">Tribal ebs</a> - Learning management system</li>
+                <li><a href="https://developer.apprenticeships.education.gov.uk/" target="_blank">GOV.UK
+                        Apprenticeships</a> - UK
+                    government's apprenticeship vacancy service API</li>
+                <li><a href="https://www.hubspot.com/" target="_blank">HubSpot</a> - Employer info managed via
+                    the CRM</li>
+                <li><a href="https://www.getmyfirstjob.co.uk/" target="_blank">GetMyFirstJob</a> - Apprenticeship agency
+                </li>
+                <li><a href="https://www.getthedata.com/" target="_blank">GetTheData Publishing Limited</a> -
+                    Postcode lookup service</li>
+            </ul>
+            <p>It stores comprehensive course and job vacancy information in a MySQL database. The CMS uses this data to
+                regularly and automatically create and update content that is topographically and geographically
+                relevant. Content can be automatically published on the live website via a built-in templating engine or
+                CMS content managers can moderate and edit the content before it is published.
+            </p>
+
+            <h3>Learner Data</h3>
+            <p>A backend service application built using the LoopBack 4 framework. It serves as a data integration and
+                transfer tool for Gateshead Council Learning and Skills department. It facilitates regular, secure and
+                automated exchange
+                of learner data between various external systems:
+            </p>
+            <ul>
+                <li><a href="https://www.tribalgroup.com/solutions/student-information-systems/ebs"
+                        target="_blank">Tribal ebs</a> - Learning management system</li>
+                <li><a href="https://www.tes.com/en-gb/for-schools/myconcern" target="_blank">MyConcern</a> -
+                    Student safeguarding platform</li>
+                <li><a href="https://www.smartassessor.com/" target="_blank">SmartAssessor</a> - ePortfolio platform
+                </li>
+                <li><a href="https://developers.google.com/workspace/gmail" target="_blank">Gmail</a> - Email
+                    notifications and communication</li>
+            </ul>
+            <p>The application implements increased security measures because it handles personal and sensitive data:
+            </p>
+            <ul>
+                <li><strong>Transient data only</strong>. Data is passed directly between external services, no data is
+                    stored in the
+                    application</li>
+                <li>External credentials are <strong>encrypted at-rest</strong> using AES-256-CBC</li>
+                <li>Security by design: encryption keys are intrinsically tied to the host machine's hard disk drive
+                    UUID, established during deployment. The <strong>keys are never stored in the application or in
+                        environment
+                        variables</strong>, they are generated at runtime using the relevant disk drive UUID</li>
+                <li><strong>Hardware-binding protection</strong>: if the hard disk changes (either virtual or physical),
+                    the connection
+                    details cannot be decrypted, preventing unauthorized access in case of disk theft or virtual machine
+                    cloning. Eradicates the vulnerabilities of storing keys in environment variables.</li>
+                <li>OAuth2 authentication for Google services</li>
+                <li>Uses SFTP (SSH File Transfer Protocol) rather than FTP/FTPS where HTTPS is unavailable.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exploring tRPC, ZAP and Zod Output Schemas</h2>
+            <p>
+                <a href="https://trpc.io/" target="_blank">tRPC</a> is a framework that simplifies API development by
+                providing end-to-end type safety between client and server, effectively eliminating the need for
+                traditional REST or GraphQL boilerplate and potentially offering a superior developer experience.
+            </p>
+            <p><a href="https://www.zaproxy.org/" target="_blank">ZAP</a> (OWASP Zed Attack Proxy) is an open-source web
+                application security scanner, primarily used for dynamic application security testing.
+            </p>
+            <p><a href="https://zod.dev/" target="_blank">Zod</a> is a TypeScript-first schema declaration and
+                validation library, allowing developers to define data
+                shapes with strong type inference.
+            </p>
+            <p>ZAP can automatically identify security vulnerabilities in REST APIs. However, its ability to
+                do so effectively is significantly boosted when it has a highly detailed schema to reference expected
+                responses. The schema detail required goes well beyond the scope provided by a standard OpenAPI
+                specification.
+            </p>
+            <p>This is where Zod becomes incredibly powerful. While servers commonly use Zod for validating
+                <em>input</em> schemas, implementing Zod for <em>output</em> schemas provides a precise, type-safe
+                definition of the data that <em>should</em> be returned by the API. This provides better synergy with
+                ZAP, as it can then rigorously validate API responses against an exact specification, catching
+                unexpected data, missing fields, or potential data leakage.
+            </p>
+            <p>
+                To tie these two together, tRPC was chosen due to it's potential to transparently provide a single
+                interface for both server and client, inherently verified and validated with comprehensive end-to-end
+                type safety. This creates <strong>a robust, end-to-end development approach with security intrinsically
+                    embedded</strong> throughout the pipeline.
+            </p>
+            <p>
+                While the proof of concept successfully demonstrated the power of this integrated approach, the broader
+                adoption and widespread support of both tRPC and automated output schemas (especially those
+                generated directly from TypeScript definitions) in popular frameworks remain limited.
+            </p>
+        </section>
+
+        <section>
+            <h2>3D Digitization & Modeling</h2>
+            <p>A personal project exploring 3D scanning and object reconstruction:</p>
+            <ul>
+                <li><a href="https://realsenseai.com/" target="_blank"><strong>Realsense D415 3D Camera</strong></a>:
+                    Personally acquired and utilized this hardware for
+                    hands-on 3D data capture.</li>
+                <li><a href="https://github.com/IntelRealSense/librealsense" target="_blank"><strong>Realsense
+                            SDK</strong></a>: Employed for seamless camera control and efficient acquisition of
+                    raw 3D data.</li>
+                <li><strong>Custom Automated Turntable</strong>: Designed and integrated a motor-driven electronic
+                    turntable for systematic, multi-view object acquisition, controlled via code.</li>
+                <li><a href="https://pointclouds.org/" target="_blank"><strong>Point Cloud Library (PCL)
+                            C++</strong></a>: Utilized extensively to develop a robust 3D object
+                    scanning and processing pipeline.</li>
+                <li><strong>6-Degree-of-Freedom (6D) ICP</strong>: Implemented for precise and robust (L*a*b* colour
+                    space + x,y,z spatial dimension) iterative closest point registration of multiple scans.</li>
+                <li><strong>Surface Mesh Reconstruction</strong>: Applied to transform acquired point clouds into
+                    detailed and manifold 3D surface models.</li>
+                <li><a href="https://www.meshlab.net/" target="_blank"><strong>MeshLab</strong></a>: Used for
+                    comprehensive visualization, inspection, and analysis of the
+                    resulting 3D models.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>WordPress Plugins</h2>
+            <p>Created custom plugins for school websites:</p>
+            <ul>
+                <li><strong>Enhanced User Management</strong>: Implements custom user roles (e.g., teacher, office
+                    staff) with
+                    specific permissions, alongside configurable login redirects to provide a seamless user experience,
+                    either role-based or directly to the homepage.</li>
+                <li><strong>Streamlined Admin Interface</strong>: Simplifies the WordPress admin bar for specific users
+                    by removing
+                    unnecessary elements like the "Edit Page" button, creating a cleaner and more focused interface.
+                </li>
+                <li><strong>Customized Content Display & Navigation</strong>: Provides advanced control over category
+                    pages,
+                    including custom URL slugs, the ability to display only top-level posts, and filtering out child
+                    category content. Also sets default behaviours for media, such as gallery images linking to files
+                    and
+                    PDF files not showing as inline embeds.</li>
+                <li><strong>Divi Theme Performance & Compatibility</strong>: Includes automated daily and on-save
+                    purging of Divi
+                    theme's static CSS to ensure design updates are always reflected and prevent caching issues.
+                    Addresses compatibility for third-party plugins (e.g., Embed Any Document, External Media) within
+                    the Divi theme environment.</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>Chrome Extensions</h2>
+            <p>Created a Chrome extension that acts as a custom user layer on top of the fixed third-party,
+                <a href="https://www.eschools.co.uk/" target="_blank">eSchools platform</a> administrative dashboard.
+            </p>
+            <p>
+                It enables me to automate repetitive tasks and implement custom logic without
+                requiring provider-side changes. It significantly enhances
+                productivity for platform administrators, offering features like bulk file and folder uploads with smart
+                duplication checks, and streamlined CSV-based user imports. Built with AngularJS and integrating
+                directly with the platform via content scripts, it transforms inefficient manual processes into swift,
+                automated operations, saving considerable administrative time.
+            </p>
+
+        </section>
+
+        <section>
+            <h2 class="mb-0">MEANr Stack</h2>
+            <em>Mysql Express Angular Node relational</em>
+            <p>
+                Created an alternative to <a href="https://github.com/linnovate/mean">mean.io</a> and <a
+                    href="https://meanjs.org/" target="_blank">meanjs</a> that's a
+                bit <a href="https://github.com/christurnbull/MEANr" target="_blank">MEANr.</a>
+            </p>
+            <p>It is a full stack framework for building web and hybrid mobile applications with MySQL, Express.js,
+                AngularJS, and
+                Node.js.</p>
+            <ul>
+                <li>JSON Web Tokens - expiring and persistent refresh tokens</li>
+                <li>Social logins</li>
+                <li>Email account confirmation/password reset</li>
+                <li>Admin dashboard</li>
+                <li>Strict JSON Schema, ACL, Socket.io, IDS, audit logging and more</li>
+            </ul>
+            <p>It is split into three repositories:</p>
+            <ul>
+                <li>Express API server (<a href="https://github.com/christurnbull/MEANr-api">MEANr-api</a>)</li>
+                <li>AngularJS Web App (<a href="https://github.com/christurnbull/MEANr-ng">MEANr-ng</a>)</li>
+                <li>Ionic Mobile App (<a href="https://github.com/christurnbull/MEANr-ion">MEANr-ion</a>)</li>
+            </ul>
+        </section>
+
+    </article>
+
+</main>

@@ -1,0 +1,132 @@
+<main id="main-content" #mainContent>
+
+    <article
+        class="prose dark:prose-invert mx-auto max-w-3xl p-4 selection:bg-black selection:text-white mt-16 mb-24 space-y-16">
+
+        <!-- About me -->
+        <section class="prose-lg">
+
+            <h1 class="sr-only">About me</h1>
+
+            <img class="float-right w-44 rounded-full" src="https://avatars.githubusercontent.com/u/7288833"
+                alt="Chris Turnbull profile picture" />
+
+            <p>
+                My name is <span class="font-bold">Chris Turnbull</span>. I am a <span class="font-bold">software
+                    developer</span> based in the North East of England, UK.
+            </p>
+
+            <p>
+                With a <b>BSc (Hons)</b> Computing for Industry from Northumbria University, my 23-year IT career has
+                encompassed various roles, including user support and workstation management, <b>Linux server and
+                    web
+                    administration</b>, and procurement and customer relations.
+            </p>
+
+            <p>
+                Having recently worked with machine learning and AI,
+                I have gained diverse knowledge and an ability to adapt my skill set.
+            </p>
+
+            <p>
+                I have primarily worked within the education sector, which has consistently provided a
+                stimulating environment for incubating creativity and fostering innovative solutions.
+            </p>
+
+
+            <div class="flex flex-col sm:flex-row justify-evenly mt-12 md:space-x-2 md:space-y-0 space-y-2">
+                <div>
+                    <a href="https://www.google.com/maps/@54.99589,-2.0141283,8.19z" target="_blank"
+                        (click)="gtm.trackEvent('ce_click_social_map')" class="flex items-center">
+                        <img src="assets/svg/maps-pin-icon.svg" class="w-7 mr-3" alt="map location pin" />
+                        <span>North East England, UK </span>
+                    </a>
+                    <a href="https://github.com/christurnbull" target="_blank" class="flex items-center"
+                        (click)="gtm.trackEvent('ce_click_social_github')">
+                        <img src="assets/svg/github-icon.svg" class="w-8 mr-2" alt="github profile" />
+                        <span>github.com/christurnbull </span>
+                    </a>
+                </div>
+                <div class="">
+                    <a href="https://www.linkedin.com/in/chris-turnbull-26124361/" target="_blank"
+                        (click)="gtm.trackEvent('ce_click_social_linkedin')" class="flex items-center">
+                        <img src="assets/svg/linkedin-square-icon.svg" class="w-8 mr-2" alt="linkedin profile" />
+                        <span>LinkedIn </span>
+                    </a>
+                    <a href="https://www.kaggle.com/christurnbull" target="_blank" class="flex items-center"
+                        (click)="gtm.trackEvent('ce_click_social_kaggle')">
+                        <img src="assets/svg/kaggle-icon.svg" class="w-8 mr-2 " alt="kaggle profile" />
+                        <span>kaggle.com/christurnbull </span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <divider></divider>
+
+        <section id="portfolio">
+
+            <h2>Portfolio</h2>
+            <projects></projects>
+
+        </section>
+
+        <divider></divider>
+
+        <!-- Roles -->
+        <section id="roles">
+
+            <h2>Roles</h2>
+
+            <div class="flex flex-col md:flex-row mt-8 md:space-x-6 md:space-y-0 space-y-6">
+
+                <div class="w-full md:pr-2 md:border-r-2 md:border-gray-400 space-y-6">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-green-700">2017 - 2024</div>
+                        <div class="font-bold text-lg dark:text-neutral-200">e-Learning ICT Officer (Web & SLA)</div>
+                        <div class="text-gray-600"><em>Gateshead Council</em></div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <div class="font-bold text-green-700">2013 - 2017</div>
+                        <div class="font-bold text-lg dark:text-neutral-200">e-Learning ICT Officer (VLE, LEP, Tech)
+                        </div>
+                        <div class="text-gray-600"><em>Gateshead Council</em></div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <div class="font-bold text-green-700">2011 - 2013</div>
+                        <div class="font-bold text-lg dark:text-neutral-200">Acting Centre Manager</div>
+                        <div class="text-gray-600"><em>Heworth Grange City Learning Centre</em></div>
+                    </div>
+                </div>
+
+                <div class="w-full space-y-6">
+
+                    <div class=" flex flex-col md:ml-3">
+                        <div class="font-bold text-green-700">2008 - 2011</div>
+                        <div class="font-bold text-lg dark:text-neutral-200">Systems Administrator</div>
+                        <div class="text-gray-600"><em>Heworth Grange City Learning Centre</em></div>
+                    </div>
+
+                    <div class="flex flex-col md:ml-3">
+                        <div class="font-bold text-green-700">2004 - 2008</div>
+                        <div class="font-bold text-lg dark:text-neutral-200">Network Technician</div>
+                        <div class="text-gray-600"><em>Heworth Grange City Learning Centre</em></div>
+                    </div>
+
+                    <div class="flex flex-col md:ml-3">
+                        <div class="font-bold text-green-700">2002 - 2003</div>
+                        <div class="font-bold text-lg dark:text-neutral-200">ICT Technician</div>
+                        <div class="text-gray-600"><em>Heworth Grange City Learning Centre</em></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </article>
+</main>

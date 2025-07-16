@@ -1,0 +1,448 @@
+<main id="main-content" #mainContent>
+
+    <article
+        class="prose dark:prose-invert mx-auto max-w-5xl p-4 selection:bg-black selection:text-white mt-16 mb-24 space-y-16">
+
+        <h1>{{resolved.title}}</h1>
+
+        <section>
+            <tw-tags [tags]="resolved.tags"></tw-tags>
+        </section>
+
+        <!-- Holistic Intro Section -->
+        <section class="prose-lg">
+
+            <p class="">
+                <a href="https://gap.educationgateshead.org/" target="_blank">Gateshead Assessment Profile</a> (GAP) is
+                an educational assessment platform that provides
+                secure and accessible tools for teachers and consultants to moderate children's progress. The system
+                combines a
+                robust backend with an intuitive frontend to deliver a seamless full-stack user experience.
+            </p>
+
+            <div class="mb-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div>
+                        <h3 class="flex justify-center">
+                            <a routerLink="." fragment="backend" class="flex items-center ">
+                                <img src="assets/svg/fastify-black.svg" alt="Fastify Logo" class="h-16 mr-2">Backend
+                                Services</a>
+                        </h3>
+                        <p>
+                            A secure, high-performance backend built with Fastify and TypeScript, featuring robust
+                            authentication,
+                            data management, and API services.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="flex justify-center">
+                            <a routerLink="." fragment="frontend" class="flex items-center">
+                                <img src="assets/angular-icon.png" alt="Angular Logo" class="h-16 mr-3">
+                                Frontend Application</a>
+                        </h3>
+                        <p>
+                            A modern Angular-based interface with responsive design, rich media handling, and offline
+                            capabilities,
+                            providing an intuitive user experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+
+                <div class="flex items-center justify-center">
+                    <img src="assets/gap-login.jpg" alt="GAP Login"
+                        class="rounded-lg shadow-md w-full max-w-xs object-cover" imgDialog>
+                </div>
+
+                <div class="flex items-center justify-center">
+                    <img src="assets/gap-view.jpg" alt="GAP View"
+                        class="rounded-lg shadow-md w-full max-w-xs object-cover" imgDialog>
+                </div>
+
+                <div class="flex items-center justify-center">
+                    <img src="assets/gap-edit.jpg" alt="GAP Edit"
+                        class="rounded-lg shadow-md w-full max-w-xs object-cover" imgDialog>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <divider></divider>
+
+        <!-- Backend Section -->
+        <section id="backend" class="mb-16">
+            <h2>Backend Services</h2>
+
+            <div class="prose dark:prose-invert max-w-none">
+                <p>
+                    The backend is a secure, high-performance platform built with Fastify that provides authentication,
+                    user management, and data storage capabilities. The system is designed with security and
+                    scalability in mind, implementing modern authentication practices and a clean architecture that
+                    separates concerns across various modules.
+                </p>
+            </div>
+
+            <h3>Technology Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card-gray">
+                    <h4>Core Technologies</h4>
+                    <ul>
+                        <li><strong>Fastify</strong>: High-performance web framework for Node.js</li>
+                        <li><strong>TypeScript</strong>: For type safety and improved developer experience</li>
+                        <li><strong>Drizzle ORM</strong>: Modern, lightweight SQL ORM for database operations</li>
+                        <li><strong>SQLite</strong>: Lightweight, file-based relational database</li>
+                        <li><strong>Zod</strong>: TypeScript-first schema validation library</li>
+                        <li><strong>JWT (JSON Web Tokens)</strong>: For secure authentication and authorization</li>
+                        <li><strong>Mailjet</strong>: For transactional emails including verification and password reset
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-gray">
+                    <h4>Development Tools</h4>
+                    <ul>
+                        <li><strong>TSX</strong>: For TypeScript execution with watch mode</li>
+                        <li><strong>TSUP</strong>: For bundling TypeScript applications</li>
+                        <li><strong>OpenAPI</strong>: For API documentation and client generation</li>
+                        <li><strong>Drizzle Kit</strong>: For database migrations and schema management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Key Features</h3>
+            <p>
+                The application follows a modular architecture pattern that separates concerns and promotes
+                maintainable code:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card-gray">
+                    <h4>User Management</h4>
+                    <ul>
+                        <li>User registration with email verification</li>
+                        <li>Role-based permissions (admin/regular users)</li>
+                        <li>Profile management</li>
+                        <li>Organization tracking</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Data Storage</h4>
+                    <ul>
+                        <li>Key-value storage for settings</li>
+                        <li>Flexible configuration system</li>
+                        <li>Blob storage for files</li>
+                        <li>Structured data models</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray prose-li:marker:text-gray-500">
+                    <h4>Background Processing</h4>
+                    <ul>
+                        <li>Cron job system</li>
+                        <li>Asynchronous email delivery</li>
+                        <li>Batch operations</li>
+                        <li>Scheduled tasks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Architecture</h3>
+            <p class="mb-6">
+                The backend follows a modular architecture that separates concerns and promotes maintainable code, built
+                with security and scalability at its core.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card-gray">
+                    <h4>Authentication System</h4>
+                    <ul>
+                        <li>JWT-based authentication with secure token handling</li>
+                        <li>Email verification workflow</li>
+                        <li>Password recovery mechanisms</li>
+                        <li>Account management (sign up, login, logout)</li>
+                        <li>CSRF protection through nonce verification</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Database Layer</h4>
+                    <ul>
+                        <li>Type-safe operations with Drizzle ORM</li>
+                        <li>Migration system for schema evolution</li>
+                        <li>Structured schema with performance optimization</li>
+                        <li>JSON storage for flexible data structures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card-gray">
+                    <h4>API Layer</h4>
+                    <ul>
+                        <li>RESTful API design with consistent patterns</li>
+                        <li>OpenAPI/Swagger documentation</li>
+                        <li>Type-safe endpoints with Zod validation</li>
+                        <li>Comprehensive error handling</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Data Protection</h4>
+                    <ul>
+                        <li>Transaction-based operations</li>
+                        <li>Environment-specific configurations</li>
+                        <li>Secure key management</li>
+                        <li>Input validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Security</h3>
+            <div
+                class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-500 px-6 pb-4 mb-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class=" font-medium text-yellow-800 dark:text-yellow-200">OWASP-Compliant JWT
+                            Authentication</h3>
+                        <div class="mt-2 text-yellow-700 dark:text-yellow-300">
+                            <p>The platform implements a sophisticated JWT security system following OWASP best
+                                practices to address the inherent statelessness vulnerabilities of traditional JWT
+                                implementations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card-gray">
+                    <h4>Multi-layered Token Security
+                    </h4>
+                    <ul>
+                        <li><strong>None Algorithm Attack Prevention</strong>: Uses &#64;fastify/jwt which is not
+                            vulnerable to algorithm downgrade attacks</li>
+                        <li><strong>Token Sidejacking Countermeasures</strong>: Combines 256-bit fingerprint in HttpOnly
+                            cookies with JWT bearer tokens</li>
+                        <li><strong>Token Revocation Strategy</strong>: Overcomes JWT's stateless nature by requiring
+                            both the JWT token and fingerprint cookie</li>
+                        <li><strong>Information Disclosure Protection</strong>: Minimizes JWT payload content to only
+                            essential data (userId)</li>
+                        <li><strong>Secure Storage Requirements</strong>: Prevents XSS attacks by requiring proper
+                            client-side storage patterns</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Advanced Security Measures
+                    </h4>
+                    <ul>
+                        <li><strong>OWASP-Recommended Practices</strong>: Secure JWT handling, CSRF protection via nonce
+                            verification, and token revocation strategies</li>
+                        <li><strong>Authentication</strong>: Supports both session-based and token-based authentication
+                            with Argon2id password hashing</li>
+                        <li><strong>Database Security</strong>: Drizzle ORM with SQLite (dev) and PostgreSQL (prod),
+                            parameterized queries, and schema validation</li>
+                        <li><strong>API Design</strong>: RESTful principles with auto-generated OpenAPI documentation
+                            from TypeScript types</li>
+                        <li><strong>Background Processing</strong>: Secure token handling with job queue system for
+                            async tasks</li>
+                        <li><strong>Error Handling</strong>: Centralized with detailed development logs and secure
+                            production messages</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-blue">
+                <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4">Client Integration</h3>
+                <div class="prose dark:prose-invert max-w-none text-blue-800 dark:text-blue-300 mb-4">
+                    <p>
+                        The backend generates TypeScript Angular clients through OpenAPI, enabling seamless integration
+                        with frontend applications. This approach ensures type safety across the full stack and reduces
+                        API integration errors.
+                    </p>
+                    <p>
+                        This platform represents a modern approach to building secure, scalable backend systems with an
+                        emphasis on developer experience and security best practices. The combination of
+                        high-performance components like Fastify with modern tooling creates a foundation that can scale
+                        with increasing demand while maintaining robust security measures.
+                    </p>
+                    <p>
+                        Designed with extensibility in mind, the GAP platform can serve as the backend for various
+                        applications requiring user authentication and data management capabilities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <divider></divider>
+
+
+        <!-- Frontend Section -->
+        <section id="frontend">
+            <h2>Frontend Application</h2>
+
+            <p>
+                The frontend is a modern, secure, and feature-rich Angular application designed to provide a
+                seamless user interface for interacting with the GAP backend services.
+            </p>
+
+            <h3>Technology Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card-gray">
+                    <h4>Core Technologies</h4>
+                    <ul>
+                        <li><strong>Angular</strong>: Standalone component architecture</li>
+                        <li><strong>Angular Material</strong>: UI component library</li>
+                        <li><strong>Tailwind CSS</strong>: Utility-first CSS framework</li>
+                        <li><strong>RxJS</strong>: Reactive state management</li>
+                        <li><strong>NGX Editor</strong>: Rich text content creation</li>
+                    </ul>
+                </div>
+                <div class="card-gray">
+                    <h4>Data & Storage</h4>
+                    <ul>
+                        <li><strong>Angular HttpClient</strong>: HTTP client with TypeScript support</li>
+                        <li><strong>Dexie.js</strong>: IndexedDB wrapper for offline storage</li>
+                        <li><strong>XLSX</strong>: Dynamic spreadsheet creation</li>
+                        <li><strong>Activity Streams</strong>: Data modeling protocol</li>
+                        <li><strong>Web Crypto API</strong>: Client-side cryptography</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Key Features</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="card-gray">
+                    <h4>User Experience</h4>
+                    <ul>
+                        <li>Fully responsive design</li>
+                        <li>Material Design components</li>
+                        <li>WCAG 2.0 AA compliant</li>
+                        <li>Lazy component loading</li>
+                        <li>Dynamic theming</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Security & Data</h4>
+                    <ul>
+                        <li>JWT authentication</li>
+                        <li>CSRF/XSS protection</li>
+                        <li>Client-side encryption</li>
+                        <li>Offline storage</li>
+                        <li>Secure data sanitization</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Media Handling</h4>
+                    <ul>
+                        <li>Browser-based WebP image conversion</li>
+                        <li>Responsive images</li>
+                        <li>Video embedding</li>
+                        <li>Document processing</li>
+                        <li>Unified upload system</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Architecture</h3>
+            <p>
+                The frontend follows a modular architecture with clear separation of concerns, designed for
+                maintainability and scalability.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card-gray">
+                    <h4>Core Structure</h4>
+                    <ul>
+                        <li><strong>Components</strong>: Reusable UI building blocks organized by functionality</li>
+                        <li><strong>Services</strong>: Centralized business logic and data access</li>
+                        <li><strong>Routes</strong>: Feature-based page components with lazy loading</li>
+                        <li><strong>Interceptors</strong>: HTTP request/response transformation</li>
+                        <li><strong>Directives & Pipes</strong>: Custom DOM behaviour and data transformation</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Data modeling</h4>
+                    <ul>
+                        <li>Implementation of the Activity Streams protocol</li>
+                        <li>Semantic modeling of content, actions, and relationships</li>
+                        <li>Hashtag-based linking system</li>
+                        <li>Extensible object model supporting various content types</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card-gray">
+                    <h4>API Integration</h4>
+                    <ul>
+                        <li>Auto-generated Angular services from OpenAPI spec</li>
+                        <li>Type-safe API calls with shared interfaces</li>
+                        <li>Centralized error handling</li>
+                        <li>Authentication interceptors for JWT tokens</li>
+                        <li>Request/response transformation</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Development Features
+                    </h4>
+                    <ul>
+                        <li>HMR (Hot Module Replacement) support</li>
+                        <li>ESBuild for fast compilation</li>
+                        <li>Component generator utilities</li>
+                        <li>TypeScript strict mode enabled</li>
+                        <li>Automated testing setup</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="card-blue">
+                <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4">Deployment</h3>
+                <div class="prose dark:prose-invert max-w-none text-blue-800 dark:text-blue-300 mb-4">
+                    <p>
+                        The Angular application is built into static assets that can be served by any web server. The
+                        production build process optimizes all assets for performance and minimal bundle size, ensuring
+                        fast
+                        loading times and efficient execution.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="text-blue-800 dark:text-blue-200">Build Optimization:</h4>
+                            <ul>
+                                <li>Production builds with advanced tree-shaking</li>
+                                <li>Bundle analysis capabilities</li>
+                                <li>Optimized asset loading</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-blue-800 dark:text-blue-200">Performance Features:</h4>
+                            <ul>
+                                <li>Lazy-loaded modules</li>
+                                <li>Code splitting</li>
+                                <li>Optimized change detection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </article>
+</main>

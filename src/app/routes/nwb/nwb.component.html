@@ -1,0 +1,136 @@
+<main id="main-content" #mainContent>
+
+    <article
+        class="prose dark:prose-invert mx-auto max-w-5xl p-4 selection:bg-black selection:text-white mt-16 mb-24 space-y-16">
+
+        <div class="mb-4">
+            <h1 class="mb-1">{{resolved.title}}</h1>
+            <em>Node WordPress Backup</em>
+        </div>
+
+        <section>
+            <tw-tags [tags]="resolved.tags"></tw-tags>
+        </section>
+
+        <section>
+            <div class="mb-24">
+                <img src="assets/nwb-logo.png" alt="nwb Logo" class="w-24 max-w-xs float-left mr-4 mt-3 mb-0">
+                <p>
+                    Node WordPress Backup (nwb) is a sophisticated, modular Node.js application designed for efficient
+                    and
+                    secure WordPress site backups. Built with TypeScript, this system provides a comprehensive solution
+                    for
+                    backing up WordPress databases, uploads, and media files to secure cloud storage.
+                </p>
+            </div>
+        </section>
+
+        <section>
+
+            <div class="card-gray text-center mb-6">
+                <img src="assets/nwb-cmd.png" alt="nwb Command Line Tool"
+                    class="rounded-lg w-full mb-4 border-8 border-black" imgDialog>
+                <em>Command line tool</em>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card-gray">
+                    <h4>Core Features</h4>
+                    <ul>
+                        <li><strong>Database Backup</strong>: Automated MySQL database backup with configurable
+                            retention policies</li>
+                        <li><strong>Media File Management</strong>: Intelligent backup of WordPress media files with
+                            optimization</li>
+                        <li><strong>Upload Directory Handling</strong>: Efficient backup of WordPress uploads directory
+                        </li>
+                        <li><strong>Incremental Backups</strong>: Only backs up files that have changed since the last
+                            backup</li>
+                        <li><strong>Image Optimization</strong>: Automatically optimizes and resizes images during
+                            backup</li>
+                        <li><strong>Cloud Storage Integration</strong>: Seamless integration with S3-compatible storage
+                            providers</li>
+                        <li><strong>CLI Interface</strong>: User-friendly command-line interface for backup and restore
+                            operations</li>
+                    </ul>
+                </div>
+                <div class="card-gray">
+                    <h4>Manifest-Based Backup Strategy</h4>
+                    <p>The system employs a manifest-based approach for tracking file metadata, which uses:</p>
+                    <ul>
+                        <li><strong>Incremental Backup Logic</strong>: Reduces storage requirements by comparing
+                            existing backups with current files</li>
+                        <li><strong>Preserves file modification timestamps</strong> for accurate restoration</li>
+                        <li><strong>Binary Serialization</strong> for efficient manifest storage</li>
+                        <li><strong>Efficient Image Handling</strong>: Advanced image processing with smart derivative
+                            management</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="card-gray">
+                    <h4>Core Technologies</h4>
+                    <p>The application uses Commander.js to provide an intuitive CLI with multiple commands and
+                        subcommands:</p>
+                    <ul>
+                        <li><strong>Node.js & TypeScript</strong>: Provides a robust, type-safe foundation</li>
+                        <li><strong>AWS SDK</strong>: Integrates with S3-compatible storage for secure, scalable storage
+                        </li>
+                        <li><strong>Sharp</strong>: High-performance image processing and optimization</li>
+                        <li><strong>zlib</strong>: Efficient compression of backup artefacts</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Modular Component Design</h4>
+                    <p>The system is built around specialized modules:</p>
+                    <ul>
+                        <li><strong>Database Backup:</strong> Handles MySQL database exports with secure credential
+                            management</li>
+                        <li><strong>Framework Backup:</strong> Manages WordPress core files and configuration</li>
+                        <li><strong>Upload Backup:</strong> Efficiently manages user-uploaded content</li>
+                        <li><strong>Image Backup:</strong> Implements advanced image optimization and management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="card-gray">
+                    <h4>Advanced Image Management</h4>
+                    <p>The image backup subsystem offers:</p>
+                    <ul>
+                        <li><strong>Intelligent Deduplication</strong>: Only stores original images while tracking
+                            derivatives</li>
+                        <li><strong>Size Capping</strong>: Automatically resizes oversized images while preserving
+                            quality</li>
+                        <li><strong>Format Optimization</strong>: Converts between image formats for optimal storage
+                        </li>
+                        <li><strong>Symbolic Linking</strong>: Uses symbolic links for efficient storage of WordPress
+                            image variants</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Security</h4>
+                    <ul>
+                        <li><strong>Environment-Based Authentication</strong>: Secure credential management using
+                            environment variables</li>
+                        <li><strong>Password Path Protection</strong>: Support for secure password files rather than
+                            hardcoded credentials</li>
+                        <li><strong>Compression & Encryption</strong>: Data is compressed during transfer and storage
+                        </li>
+                        <li><strong>Minimal Permissions</strong>: Follows principle of least privilege for database
+                            interactions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </article>
+
+</main>

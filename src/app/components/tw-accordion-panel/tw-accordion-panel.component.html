@@ -1,0 +1,15 @@
+<div class="border-2 border-grey-600 rounded" tabindex="0" [attr.aria-expanded]="isOpen ? true : null"
+    (click)="toggle()" (keyup.enter)="toggle()">
+
+    <div class="tw-accordion-panel-header">
+        <ng-content select="[slot=header]"></ng-content>
+    </div>
+
+    <div class="overflow-hidden transition-all" [ngClass]="isOpen ? 'max-h-screen' : 'max-h-0'">
+
+        <div class="tw-accordion-panel-body">
+            <ng-content select="[slot=body]"></ng-content>
+        </div>
+
+    </div>
+</div>

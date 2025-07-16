@@ -1,0 +1,448 @@
+<main id="main-content" #mainContent>
+
+    <article
+        class="prose dark:prose-invert mx-auto max-w-5xl p-4 selection:bg-black selection:text-white mt-16 mb-24 space-y-16">
+
+        <h1>{{resolved.title}}</h1>
+
+        <section>
+            <tw-tags [tags]="resolved.tags"></tw-tags>
+        </section>
+
+        <!-- Holistic Intro Section -->
+        <section class="prose-lg">
+
+            <p>
+                The Gateshead Learning and Skills CMS is a WYSIWYG content management system built to support
+                the Gateshead Council's Learning and Skills department. The system combines a robust backend with dual
+                frontends that have a unified interface - an administrative code base for content managers and a
+                code base for the public-facing website that is optimized for performance and SEO.
+            </p>
+
+            <div class="mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    <div>
+                        <h3 class="flex justify-center">
+                            <a routerLink="." fragment="backend" class="flex flex-col items-center">
+                                <img src=" assets/svg/loopback-mark-frame-blue.svg" alt="Loopback Logo" class="h-16">
+                                <div>Backend Service</div>
+                            </a>
+                        </h3>
+                        <p>
+                            Built with <a href="https://loopback.io/" target="_blank">Loopback 4</a>, it handles the
+                            content data and state. It integrates with <a routerLink="/app-code" fragment="ndta">
+                                external MIS systems</a> to generate automated content and it provides a RESTful API for
+                            the frontend codebases.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="flex justify-center">
+                            <a routerLink="." fragment="admin" class="flex flex-col items-center">
+                                <img src="assets/angular-icon.png" alt="Angular Logo" class="h-16">
+                                <div>Admin Frontend</div>
+                            </a>
+                        </h3>
+                        <p>
+                            Provides an authenticated administration layer for content managers, with a visual page
+                            builder and modular content blocks for simple page creation and editing.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="flex justify-center">
+                            <a routerLink="." fragment="public" class="flex flex-col items-center">
+                                <img src="assets/angular-universal.jpg" alt="Angular Universal Logo"
+                                    class="h-16 mr-3">Public Frontend</a>
+                        </h3>
+                        <p>
+                            A high-performance, SEO-optimized public website layer with server-side rendering,
+                            integrating with <a href="https://www.hubspot.com/" target="_blank">HubSpot CRM</a> to
+                            provide optimal user experience, user engagement and search visibility.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+                <div class="flex items-center justify-center">
+                    <img src="assets/ls-cms-admin-1.jpg" alt="Admin Dashboard"
+                        class="rounded-lg shadow-md w-full max-w-xs object-cover" imgDialog>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="assets/ls-cms-admin-2.jpg" alt="Content Editor"
+                        class="rounded-lg shadow-md w-full max-w-xs object-cover" imgDialog>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="assets/ls-cms-admin-3.jpg" alt="Public Website"
+                        class="rounded-lg shadow-md w-full max-w-xs object-cover" imgDialog>
+                </div>
+            </div>
+        </section>
+
+        <divider></divider>
+
+        <!-- Backend Section -->
+        <section id="backend" class="mb-16">
+            <h2>Backend Service</h2>
+
+            <div class="prose dark:prose-invert max-w-none">
+                <p>
+                    The backend service uses the Loopback 4 framework to provide a robust, secure Content Management
+                    System built on modern web technologies. It provides a flexible platform for managing web content
+                    with a strong focus on security, scalability, and automation.
+                </p>
+            </div>
+
+            <h3>Technology Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card-gray">
+                    <h4>Core Technologies</h4>
+                    <ul>
+                        <li><strong>Framework</strong>: LoopBack 4 - A highly extensible Node.js and TypeScript
+                            framework for building REST APIs</li>
+                        <li><strong>Database</strong>: MySQL - Used for structured data storage with full-text search
+                            capabilities</li>
+                        <li><strong>Authentication</strong>: Multi-strategy authentication system with JWT, Azure, and
+                            Google OAuth integration</li>
+                        <li><strong>Security</strong>: Role-based access control (RBAC) with fine-grained authorization
+                            and custom voter patterns
+                        </li>
+                        <li><strong>API</strong>: RESTful API with comprehensive OpenAPI documentation</li>
+                        <li><strong>TypeScript</strong>: Used throughout for type safety and modern JavaScript features
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-gray">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Content Management</strong>: Complete page, route, and tag management with full-text
+                            search</li>
+                        <li><strong>Content Versioning</strong>: History tracking for content changes</li>
+                        <li><strong>Route Management</strong>: Hierarchical navigation structure with dynamic menus
+                        </li>
+                        <li><strong>Automated Content</strong>: Integration with external MIS systems (Tribal ebs, which
+                            provides course information) to generate and update template driven content</li>
+                        <li><strong>Media Management</strong>: Support for image and document file uploads with metadata
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Architecture</h3>
+            <p class="mb-6">
+                The Loopback Server follows a clean architecture pattern with clear separation of concerns:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card-gray">
+                    <h4>Architecture Components</h4>
+                    <ul>
+                        <li><strong>Models</strong>: Define the data structures with properties, validations, and
+                            relationships</li>
+                        <li><strong>Repositories</strong>: Implement data access patterns with transaction support</li>
+                        <li><strong>Controllers</strong>: Handle HTTP requests and responses, implement business logic
+                        </li>
+                        <li><strong>Services</strong>: Encapsulate reusable business logic and external integrations
+                        </li>
+                        <li><strong>Mixins</strong>: Provide reusable functionality across multiple components</li>
+                        <li><strong>Sequence</strong>: Custom request handling pipeline</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Security Implementation</h4>
+                    <ul>
+                        <li><strong>JWT Authentication</strong>: Secure, stateless token-based authentication</li>
+                        <li><strong>OAuth Integration</strong>: Support for Azure AD and Google authentication</li>
+                        <li><strong>Content Security Policies</strong>: Implementation of server-side security headers
+                            and CORS settings to mitigate attacks
+                        </li>
+                        <li><strong>Role-based Authorization</strong>: Granular permission control with Owner-based
+                            Access Control, where content creators have special permissions
+                        </li>
+                        <li><strong>Penetration Tested</strong>: Using OWASP ZAP (Zed Attack Proxy)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-blue">
+                <h3 class="text-blue-800 dark:text-blue-200 mb-4">Client Integration</h3>
+                <div class="max-w-none text-blue-800 dark:text-blue-300 mb-4">
+                    <p>
+                        Designed as a headless CMS, the system offers multiple integration options including an
+                        auto-generated RESTful API with detailed OpenAPI documentation, built-in API explorer in
+                        development environments, and support for various client authentication workflows including
+                        browser redirects.
+                    </p>
+                    <p>
+                        The API is designed to be consumed by any front-end technology, with special consideration for
+                        modern JavaScript frameworks. The system includes specific redirect handling for single-page
+                        application routers, making it particularly well-suited for Angular, React, or Vue frontends.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <divider></divider>
+
+        <!-- Admin Frontend Section -->
+        <section id="admin" class="mb-16">
+            <h2>Administration Frontend</h2>
+
+            <p>
+                The Administration Frontend is a sophisticated content management system (CMS) administration
+                built with Angular. It provides a comprehensive interface for managing website content,
+                including pages, headers, footers, navigation structures, and media files. The system features a
+                powerful visual page builder, enabling content administrators to create and modify content without
+                requiring programming knowledge.
+            </p>
+
+            <h3>Technology Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card-gray md:col-span-1">
+                    <h4>Core Technologies</h4>
+                    <ul>
+                        <li><strong>Frontend Framework</strong>: Angular - A comprehensive platform for building web
+                            applications</li>
+                        <li><strong>UI Components</strong>: Angular Material - For consistent, professional UI elements
+                        </li>
+                        <li><strong>Rich Text Editing</strong>: Quill editor integration with custom plugins</li>
+                        <li><strong>Code Editing</strong>: Monaco Editor integration for CSS editing</li>
+                        <li><strong>HTML Sanitization</strong>: DOMPurify for XSS prevention</li>
+                    </ul>
+                </div>
+                <div class="card-gray md:col-span-2">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Visual Page Builder</strong>: WYSIWYG editor with hierarchical component structure
+                        </li>
+                        <li><strong>Component Library</strong>: Pre-built components for text, images, videos, and more
+                        </li>
+                        <li><strong>Page History</strong>: Version tracking and restoration capabilities, draft
+                            publishing and recycle bin management</li>
+                        <li><strong>Media Management</strong>: Image and file upload with automatic hash generation</li>
+                        <li><strong>Dynamic Navigation Builder</strong>: Tree-based site navigation structure editor
+                        </li>
+                        <li><strong>Template Management</strong>: Modular, block based with copy/paste functionality and
+                            support for dynamic variables</li>
+                        <li><strong>Live Style Changes</strong>: Modify component level (page/section) CSS rules and
+                            classes, and also a global level stylesheet</li>
+                        <li><strong>External Services</strong>: HubSpot forms component for integration with HubSpot CRM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Architecture</h3>
+            <p class="mb-6">
+                The Administration Frontend is built around a modular architecture with clearly separated concerns:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="card-gray md:col-span-2">
+                    <h4>Components</h4>
+                    <ul>
+                        <li><strong>Single Page Application</strong>: Fast, responsive and low cost</li>
+                        <li><strong>Core Component</strong>: Custom <strong>*ngForTree</strong> directive that provides
+                            similar functionality to the built-in *ngFor directive, but operates with hierarchical data
+                            instead of flat array data. It maintains consistent references to nodes within the tree,
+                            allowing the tree state to immediately capture changes to individual nodes
+                        </li>
+                        <li><strong>Specialized Editors</strong>: Extendable modular components tailored to relevant
+                            functional needs, such as hashtags, style rules, SEO properties, etc</li>
+                        <li><strong>Shared Codebase</strong>: Components and services that are used by both the
+                            admin and public frontends are structured into a shared common library</li>
+                        <li><strong>Uploads</strong>: Browser-based cryptographic hashes are used for file
+                            identification and de-duplication.
+                        </li>
+                        <li><strong>Images</strong>: Browser based conversion to WebP format at different
+                            sizes/ratios, prior to upload.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-gray md:col-span-1">
+                    <h4>Security</h4>
+                    <ul>
+                        <li><strong>Authentication</strong>: JWT-based authentication with secure token storage</li>
+                        <li><strong>Cross Tab Communication</strong>: Broadcast Channel API for sharing information
+                            across browser tabs</li>
+                        <li><strong>Content Security</strong>: HTML content sanitization using DOMPurify</li>
+                        <li><strong>API Security</strong>: Custom REST interceptor for managing authentication headers
+                            and graceful error handling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="card-gray">
+                    <img src="assets/ls-cms-templates.jpg" alt="Page Builder Templates"
+                        class="rounded-lg w-full mb-4 border-1 border-gray-200" imgDialog>
+                    <h4>Page Builder Templates</h4>
+                    <p>Intuitive visual editor for creating and modifying pages with real-time preview</p>
+                </div>
+
+                <div class="card-gray">
+                    <img src="assets/ls-cms-styles.jpg" alt="Live Style Changes"
+                        class="rounded-lg w-full mb-4 border-1 border-gray-200" imgDialog>
+                    <h4>Live Style Changes</h4>
+                    <p>Live CSS changes at component level (page/section) and global level</p>
+                </div>
+
+                <div class="card-gray">
+                    <img src="assets/ls-cms-navigation.jpg" alt="Navigation Builder"
+                        class="rounded-lg w-full mb-4 border-1 border-gray-200" imgDialog>
+                    <h4>Navigation Builder</h4>
+                    <p>Dynamic navigation management with auto breadcrumb generation</p>
+                </div>
+            </div>
+        </section>
+
+        <divider></divider>
+
+        <!-- Public Frontend Section -->
+        <section id="public" class="mb-16">
+            <h2>Public Frontend</h2>
+
+            <p>
+                The Public Frontend is a modern, performance-optimized application built using Angular Universal for
+                content delivery with an emphasis on SEO, security, and developer experience. Utilizing server-side
+                rendering (SSR), it delivers high-performance web pages with optimized search engine visibility
+                while maintaining the interactivity of a single-page application.
+            </p>
+
+            <h3>Technology Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card-gray">
+                    <h4>Core Technologies</h4>
+                    <ul>
+                        <li><strong>Server-Side Rendering</strong>: Angular Universal for improved performance and
+                            SEO with client-side hydration for interactive features
+                        </li>
+                        <li><strong>Hydration</strong>: Client-side hydration after the first load supports interactive
+                            features
+                        </li>
+                        <li><strong>Shared Codebase</strong>: Utilizes a shared common library for common components and
+                            services
+                        </li>
+                        <li><strong>Optimized Bundle</strong>: Code splitting and minification for faster load times
+                            with lazy loading support
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-gray">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Dynamic Page Resolution</strong>: Content resolution based on URL paths</li>
+                        <li><strong>SEO Optimization</strong>: Meta tags, canonical URLs, and OpenGraph support</li>
+                        <li><strong>Responsive Design</strong>: Adapts to various screen sizes and devices</li>
+                        <li><strong>Analytics</strong>: Google Analytics with Google Tag Manager integration</li>
+                        <li><strong>HubSpot Forms</strong>: Integration with HubSpot CRM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Architecture</h3>
+            <p class="mb-6">
+                The Public Frontend follows a modern, modular architecture with several key design patterns:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card-gray">
+                    <h4>Components</h4>
+                    <ul>
+                        <li><strong>Component-Based Structure</strong>: Encapsulated UI components</li>
+                        <li><strong>Service Layer</strong>: Dedicated services for business logic and data</li>
+                        <li><strong>Resolver Pattern</strong>: Pre-fetches data before route activation</li>
+                        <li><strong>Repository Pattern</strong>: Abstracted data access through API services</li>
+                    </ul>
+                </div>
+
+                <div class="card-gray">
+                    <h4>Security</h4>
+                    <ul>
+                        <li><strong>XSS Protection</strong>: DOMPurify integration for HTML sanitization of
+                            user-generated content</li>
+                        <li><strong>Content Security Policy</strong>: Supports strict CSP configurations enforce by the
+                            server</li>
+                        <li><strong>REST API</strong>: Custom REST interceptor for graceful error handling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="card-gray">
+                    <div class="flex flex-col items-center">
+                        <img src="assets/svg/lighthouse-logo.svg" alt="Lighthouse Icon"
+                            class="not-prose h-16 mt-8 mb-3">
+                        <h4>Performance Testing</h4>
+                        <p>Content and framework audit using <a href="https://google.com/lighthouse"
+                                target="_blank">Google Lighthouse</a> to improve the quality of pages</p>
+                    </div>
+                </div>
+
+                <div class="card-gray">
+                    <div class="flex flex-col items-center">
+                        <img src="assets/svg/accessibility-icon.svg" alt="Accessibility Icon"
+                            class="not-prose h-16 mt-8 mb-3">
+                        <h4>Accessibility Testing</h4>
+                        <p>Content and framework audit using <a href="https://www.deque.com/axe/devtools/"
+                                target="_blank">axe DevTools</a> to ensure WCAG 2.1 AA compliance</p>
+                    </div>
+                </div>
+
+                <div class="card-gray">
+                    <div class="flex flex-col items-center">
+                        <img src="assets/svg/zap-icon.svg" alt="ZAP Icon" class="not-prose h-16 mt-8 mb-3">
+                        <h4>Security Testing</h4>
+                        <p>Framework penetration tests using <a href="https://owasp.org/www-project-zap/"
+                                target="_blank">OWASP ZAP (Zed Attack Proxy)</a> to identify vulnerabilities</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-blue">
+                <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4">Deployment</h3>
+                <div class="prose dark:prose-invert max-w-none text-blue-800 dark:text-blue-300 mb-4">
+                    <p>
+                        The Angular Universal application is deployed using server-side rendering (SSR) to generate HTML
+                        on the server before sending it to the client. This approach combines the SEO benefits of
+                        server-rendered content with the interactivity of a single-page application. The Node.js server
+                        processes Angular templates and delivers fully rendered pages, which are then hydrated on the
+                        client side for dynamic functionality.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="text-blue-800 dark:text-blue-200">Server-Side Rendering:</h4>
+                            <ul>
+                                <li>Angular Universal Node.js server - Enables full server-side rendering of Angular
+                                    applications</li>
+                                <li>Pre-rendering of dynamic routes - Improves initial page load speed and SEO rankings
+                                </li>
+                                <li>Optimized server-to-client transfer state - Prevents duplicate data fetching</li>
+                                <li>Better SEO performance - Search engines can fully index content</li>
+                                <li>Improved performance on low-powered devices - Less client-side processing required
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-blue-800 dark:text-blue-200">Client-Side Features:</h4>
+                            <ul>
+                                <li>Client-side hydration - Preserves interactivity after initial server render</li>
+                                <li>Progressive enhancement - Ensures functionality across all devices and browsers</li>
+                                <li>Seamless state transfer from server to client - Eliminates flickering during
+                                    transition</li>
+                                <li>Faster subsequent navigation - Client-side routing after initial load</li>
+                                <li>Reduced server load - After initial page load, most interactions happen client-side
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </article>
+
+</main>
