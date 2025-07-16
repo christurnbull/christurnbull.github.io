@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production --stats-json && echo 'https://esbuild.github.io/analyze/'",
-    "build-gh": "ng build --configuration production && rm -rf docs/ && mkdir -p docs/ && mv dist/christurnbull.github.io/browser/* docs/ && npm run cname",
+    "build:gh": "ng build --configuration production && rm -rf docs/ && mkdir -p docs/ && mv dist/christurnbull.github.io/browser/* docs/ && npm run cname",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev": "npm run start",
