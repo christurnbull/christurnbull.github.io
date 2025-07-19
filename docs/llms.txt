@@ -37,6 +37,14 @@ Educational assessment platform with:
 - **Features**: Secure authentication, email integration, role-based access
 - **Technologies**: TypeScript, Fastify, Angular, SQLite, Drizzle, Mailjet, Zod, JWT, Tailwind
 
+#### LLM Bitcoin Key Predictor (/llm-bitcoin-demo)
+This project is a technical demonstration of running a Large Language Model (LLM) entirely within a web browser, on-device.
+- **Purpose**: Showcases browser-side LLM inference using a 500 million parameter Danube3 LLM (4-bit quantized to 318MB GGUF format). The application attempts to predict Bitcoin private keys from public addresses using few-shot prompting.
+- **Functionality**: The LLM runs locally in the browser via WebAssembly (llama.cpp compiled with Emscripten), with the UI built using Angular and Tailwind CSS.
+- **Key Insight**: While impressive for its on-device execution, the project explicitly highlights that the LLM *cannot* genuinely predict private keys. Bitcoin's cryptographic design ensures no predictable patterns exist between addresses and keys for an LLM to learn, making it inherently unpredictable.
+- **Demonstration Goal**: To illustrate that LLMs can generate plausible-looking text even for data without underlying patterns, and to prove the viability of complex LLM operations directly within a web browser, maintaining a responsive user interface.
+- **Technologies**: Danube3 LLM, GGUF, llama.cpp, Emscripten, WebAssembly, Angular, Tailwind CSS, IndexedDB.
+
 ### Tools & Utilities
 
 #### Kiowa (/kiowa)
@@ -96,3 +104,4 @@ This portfolio demonstrates expertise in modern web development, security best p
 
 Website: https://wow-l.uk
 GitHub: https://github.com/christurnbull
+LinkedIn: https://www.linkedin.com/in/wow-luk

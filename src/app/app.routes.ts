@@ -24,5 +24,6 @@ export const routes: Routes = [
     { path: 'kiowa', component: KiowaComponent, resolve: { data: staticResolverResolver } },
     { path: 'nwb', component: NwbComponent, resolve: { data: staticResolverResolver } },
     { path: 'not-found', component: PageNotFoundComponent, resolve: { data: staticResolverResolver } },
+    { path: 'llm-bitcoin', redirectTo: '/llm-bitcoin', pathMatch: 'full' },
     { path: '**', redirectTo: '/not-found' },
 ];
