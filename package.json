@@ -14,6 +14,7 @@
     "sitemap": "cd deploy && node gen-sitemap.js && cp sitemap.xml ../docs/sitemap.xml",
     "robots": "cp deploy/robots.txt docs/robots.txt",
     "llms": "cp deploy/llms.txt docs/llms.txt && echo 'Consider updating llms.txt'",
+    "404": "cp deploy/404.html docs/404.html",
     "gh:push": "git add -A && git commit -m 'Update' && git push"
   },
   "private": true,
