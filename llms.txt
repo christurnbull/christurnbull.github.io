@@ -1,0 +1,98 @@
+# Chris Turnbull - Software Developer Portfolio
+
+This is the personal portfolio website of Chris Turnbull, a full-stack software developer specializing in TypeScript, Angular, Node.js, and modern web technologies.
+
+## Site Structure
+
+The website is built as an Angular Single Page Application (SPA) with the following main sections:
+
+### Home (/)
+Personal introduction and overview of skills and experience.
+
+### Portfolio (/portfolio)
+Comprehensive showcase of projects and technical work.
+
+### Application Code (/app-code)
+Detailed examples of custom application development including:
+- WordPress Plugins with custom roles, admin interfaces, and Divi theme optimizations
+- Chrome Extensions for eSchools platform automation with AngularJS
+- 3D Digitization & Modeling projects using Realsense D415, PCL C++, and 6D ICP
+- Technologies: TypeScript, C++, Emscripten, PHP, Python, WordPress
+
+### Web Development Projects
+
+#### Gateshead Learning and Skills CMS (/ls-cms)
+Full-stack content management system featuring:
+- **Frontend**: Angular Universal with SSR, security-focused architecture
+- **Backend**: LoopBack 4 TypeScript REST API with JWT authentication
+- **Admin Dashboard**: Drag-and-drop page builder with component library
+- **Security**: DOMPurify sanitization, XSS protection, OWASP compliance
+- **Technologies**: TypeScript, LoopBack, Angular, SSR, MySQL, OpenAPI, WCAG, HubSpot, ZAP
+
+#### Gateshead Assessment Profile Web App (/gap)
+Educational assessment platform with:
+- **Backend**: Fastify TypeScript API with SQLite and Drizzle ORM
+- **Frontend**: Angular with Tailwind CSS
+- **Security**: OWASP-compliant JWT with fingerprint tokens
+- **Features**: Secure authentication, email integration, role-based access
+- **Technologies**: TypeScript, Fastify, Angular, SQLite, Drizzle, Mailjet, Zod, JWT, Tailwind
+
+### Tools & Utilities
+
+#### Kiowa (/kiowa)
+Advanced web server security and log analysis tool:
+- Real-time Apache log monitoring and analysis
+- Automated threat detection and iptables firewall management
+- Bot detection and attack pattern recognition
+- **Technologies**: CLI Tool, Apache, iptables, Bot Detection, Log Analysis
+
+#### Node WordPress Backup (NWB) (/nwb)
+Comprehensive WordPress backup solution:
+- Database backup with configurable retention
+- Media file management and optimization
+- Incremental backups and cloud storage integration
+- Manifest-based backup strategy with deduplication
+- **Technologies**: CLI Tool, Node.js, S3, WordPress, Backup
+
+### Experience & Skills
+
+#### Kaggle AI Competition Platform (/kaggle)
+Experience competing in AI/ML competitions with Python and PyTorch.
+**Technologies**: Kaggle, Python, AI, Machine Learning, PyTorch
+
+#### Linux Systems Administration (/linux)
+Comprehensive Linux experience including:
+- Web & Application Hosting: LAMP stack, Nginx, Node.js with PM2
+- Operating Systems: Ubuntu, CentOS 7, XenServer virtualization
+- Network & Security: Squid Reverse Proxy, OpenSSH, VPN, iptables NAT
+- Hardware & Infrastructure: Server setup, rack management, iSCSI SAN
+
+#### Vibe Coding & Agentic AI (/vibe)
+Modern development approaches and AI-assisted coding methodologies.
+**Technologies**: Vibe Coding, Agentic AI, Agile, Transformative
+
+## Technical Expertise
+
+### Core Technologies
+- **Languages**: TypeScript, JavaScript, Python, C++, PHP
+- **Frontend**: Angular, Angular Universal (SSR), HTML5, CSS3, SCSS, Tailwind CSS
+- **Backend**: Node.js, LoopBack 4, Fastify, Express
+- **Databases**: MySQL, SQLite, with ORMs like Drizzle
+- **Cloud & DevOps**: AWS S3, Linux server administration, Docker
+- **Security**: JWT authentication, OWASP compliance, XSS prevention, DOMPurify
+- **Tools**: CLI development, Apache log analysis, WordPress development
+
+### Specializations
+- Full-stack web application development
+- Content Management Systems (headless CMS architecture)
+- Security-focused application design
+- Server administration and log analysis
+- Educational technology platforms
+- WordPress plugin and theme development
+- 3D digitization and computer vision
+
+## Contact
+This portfolio demonstrates expertise in modern web development, security best practices, and full-stack application architecture. The codebase showcases clean, maintainable code with comprehensive documentation and testing.
+
+Website: https://wow-l.uk
+GitHub: https://github.com/christurnbull

@@ -5,12 +5,16 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production --stats-json && echo 'https://esbuild.github.io/analyze/'",
-    "build:gh": "ng build --configuration production && rm -rf docs/ && mkdir -p docs/ && mv dist/christurnbull.github.io/browser/* docs/ && npm run cname",
+    "build:gh": "ng build --configuration production && rm -rf docs/ && mkdir -p docs/ && mv dist/christurnbull.github.io/browser/* docs/ && npm run cname && npm run robots && npm run sitemap && npm run llms",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev": "npm run start",
     "gc": "npx ng g component --skip-tests --prefix ''",
-    "cname": "echo 'wow-l.uk' > docs/CNAME"
+    "cname": "cp CNAME docs/CNAME",
+    "sitemap": "node gen-sitemap.js && cp sitemap.xml docs/sitemap.xml",
+    "robots": "cp robots.txt docs/robots.txt",
+    "llms": "cp llms.txt docs/llms.txt && echo 'Consider updating llms.txt'",
+    "gh:push": "git add -A && git commit -m 'Update' && git push"
   },
   "private": true,
   "dependencies": {
